@@ -21,7 +21,7 @@ bool emptys(pilha_t* pilha);
 int sizes(pilha_t* pilha);
 void detroy_stack(pilha_t* pilha);
 
-/*--- FILA ---*/
+/*--- FILA ---
 typedef struct fila fila_t;
 fila_t* create_queue();
 void enqueue(fila_t* fila, int valor);
@@ -31,7 +31,7 @@ bool full(fila_t* fila);
 int sizeq(fila_t* fila);
 int head(fila_t* fila);
 int tail(fila_t* fila);
-void destroy_queue(fila_t* fila);
+void destroy_queue(fila_t* fila);*/
 
 /*--- LISTA ---*/
 typedef struct lista lista_t;
@@ -40,6 +40,14 @@ void add(lista_t* lista, int valor);
 int search(lista_t* lista, int valor);
 bool removel(lista_t* lista, int valor);
 void destroy_list(lista_t* lista);
+
+    /*-- Fila V2 --*/
+
+typedef struct queue Fila;
+bool enfileirar(Fila *f, int valor);
+bool filaCheia(Fila *f);
+bool filaVazia(Fila *f);
+void inicializarFila(Fila *f);
 
 #endif
 
