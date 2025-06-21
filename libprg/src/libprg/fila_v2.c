@@ -9,11 +9,26 @@
 #define TAMANHO_MAX 5
 
 typedef struct queue{
-    int dados[TAMANHO_MAX];
+    int *dados;
     int frente;
     int tras;
     int tamanho;
 } Fila;
+
+Fila *create_queue() {
+    // Criar estrutura fila e alocar memória
+    Fila *fila = (Fila *) malloc(sizeof(Fila));
+
+    // Alocar memória para os elementos da fila
+    fila->dados = (int *) malloc(sizeof(int) * CAPACIDADE_INICIAL);
+
+    // Definir os valores iniciais da fila
+    fila->frente = 0;
+    fila->tras = 0;
+    fila->tamanho = CAPACIDADE_INICIAL;
+
+    return fila;
+}
 
 // Inicializa uma fila vazia
 void inicializarFila(Fila *f) {

@@ -48,6 +48,7 @@ bool enfileirar(Fila *f, int valor);
 bool filaCheia(Fila *f);
 bool filaVazia(Fila *f);
 void inicializarFila(Fila *f);
+Fila *create_queue();
 
 #endif
 
