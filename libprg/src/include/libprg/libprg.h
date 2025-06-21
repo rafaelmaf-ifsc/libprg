@@ -35,7 +35,7 @@ void destroy_queue(fila_t* fila);
 
 /*--- LISTA ---*/
 typedef struct lista lista_t;
-lista_t* create_list();
+lista_t* create_list(bool ordenada);
 void add(lista_t* lista, int valor);
 int search(lista_t* lista, int valor);
 bool removel(lista_t* lista, int valor);
