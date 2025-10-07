@@ -28,13 +28,11 @@ void empilhar(pilha_t* pilha, int valor) {
 }
 
 int desempilhar(pilha_t* pilha) {
-    int valor = 0;
-    if (pilha->topo != NULL) {
-        valor = pilha->elementos[pilha->topo];
-    } else {
-        return NULL;
-    }
 
+    if (pilha->topo == -1) {
+        return  -1;
+    }
+    int valor = pilha->elementos[pilha->topo];
     pilha->topo--;
     return valor;
 }

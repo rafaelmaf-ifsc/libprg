@@ -44,7 +44,7 @@ no_t* buscar_lista_encadeada(no_t** inicio, int valor) {
     return NULL;
 }
 
-void remover_lista_encadeada(no_t **inicio, int valor) {
+void remover_lista_encadeada(no_t** inicio, int valor) {
     no_t *atual = *inicio;
     no_t *anterior = NULL;
 
@@ -61,4 +61,16 @@ void remover_lista_encadeada(no_t **inicio, int valor) {
         anterior = atual;
         atual = atual->proximo;
     }
+}
+
+void destruir_no(no_t** inicio) {
+    no_t *atual = *inicio;
+
+    while (atual) {
+        no_t *proximo = atual->proximo;
+        free(atual);
+        atual = proximo;
+    }
+
+
 }

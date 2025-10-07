@@ -38,12 +38,12 @@ void enfileirar(fila_t* fila, int valor) {
 
 int desenfileirar (fila_t* fila) {
     int valor = 0;
-    if (fila->inicio != NULL) {
-        valor = fila->elementos[fila->inicio];
-        fila->inicio++;
-    } else {
-        return NULL;
+    if (fila->inicio == -1) {
+        return -1;
     }
+    valor = fila->elementos[fila->inicio];
+    fila->inicio++;
+
     return valor;
 }
 
