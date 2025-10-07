@@ -37,21 +37,25 @@ int desempilhar(pilha_t* pilha) {
     return valor;
 }
 
-int tamanho(pilha_t* pilha) {
+int tamanho_pilha(pilha_t* pilha) {
     return pilha->topo + 1;
 }
 
-bool vazio(pilha_t* pilha) {
-
+bool vazio_pilha(pilha_t* pilha) {
+    if (pilha->topo == -1) {
+        return true;
+    }
+    return false;
 }
 
+int topo_pilha(pilha_t* pilha) {
+    if (pilha->topo == -1) {
+        return -1;
+    }
+    return pilha->elementos[pilha->topo];
+}
 
-void destruir(pilha_t* pilha) {
+void destruir_pilha(pilha_t* pilha) {
     free(pilha->elementos);
     free(pilha);
 }
-
-/*
-
-vazia
-*/

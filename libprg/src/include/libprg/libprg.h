@@ -8,9 +8,11 @@ typedef struct pilha pilha_t;
 
 pilha_t* criar_pilha(int capacidade);
 void empilhar(pilha_t* pilha, int valor);
-int tamanho(pilha_t* pilha);
-void destruir(pilha_t* pilha);
+void destruir_pilha(pilha_t* pilha);
 int desempilhar(pilha_t* pilha);
+int tamanho_pilha(pilha_t* pilha);
+int topo_pilha(pilha_t* pilha);
+bool vazio_pilha(pilha_t* pilha);
 
 /*-- FILA --*/
 typedef struct fila fila_t;
