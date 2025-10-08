@@ -23,9 +23,9 @@ void enfileirar(fila_t *fila, int valor);
 bool fila_cheia(fila_t *fila);
 bool fila_vazia(fila_t *fila);
 int desenfileirar(fila_t *fila);
-int inicio_da_fila(fila_t *fila);
-int fim_da_fila(fila_t *fila);
-int tamanho_da_fila(fila_t *fila);
+int fila_inicio(fila_t *fila);
+int fila_fim(fila_t *fila);
+int fila_tamanho(fila_t *fila);
 void destruir_fila(fila_t *fila);
 
 

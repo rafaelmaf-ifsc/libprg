@@ -21,12 +21,16 @@ fila_t* criar_fila(int capacidade) {
     return f;
 }
 
-bool cheia(fila_t* fila) {
+bool fila_cheia(fila_t* fila) {
     return fila->tamanho >= fila->capacidade;
 }
 
+bool fila_vazia(fila_t *fila) {
+    return fila->tamanho<=0;
+}
+
 void enfileirar(fila_t* fila, int valor) {
-    if (cheia(fila)) {
+    if (fila_cheia(fila)) {
         exit(EXIT_FAILURE);
     }
 
@@ -47,19 +51,21 @@ int desenfileirar (fila_t* fila) {
     return valor;
 }
 
-int inicio (fila_t* fila) {
-    return fila->inicio;
+int fila_inicio (fila_t* fila) {
+    return fila->elementos[fila->inicio];
 }
 
-int fim (fila_t* fila) {
-    return fila->fim;
+int fila_fim (fila_t* fila) {
+    int indice = (fila->fim - 1 + fila->capacidade) % fila->capacidade;
+    return fila->elementos[indice];
 }
-/*
-criar_fila
-enfileirar
-desenfileirar
-inicio
-fim
-tamanho
-destruir_fila
-*/
+
+int fila_tamanho(fila_t *fila){
+    return fila->tamanho;
+}
+
+void destruir_fila(fila_t *fila){
+    free(fila->elementos);
+    free(fila);
+}
+
