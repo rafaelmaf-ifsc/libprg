@@ -36,7 +36,7 @@ lista_linear_t *criar_lista_linear(int capacidade, bool ordenada);
 bool lista_linear_cheia(lista_linear_t *lista);
 void inserir(lista_linear_t *lista, int valor);
 bool lista_linear_vazia(lista_linear_t *lista);
-int buscar_na_lista(lista_linear_t *lista, int valor);
+int buscar_lista(lista_linear_t *lista, int valor);
 int remover_da_lista(lista_linear_t *lista, int valor);
 void destruir_lista(lista_linear_t *lista);
 int elemento_da_lista(lista_linear_t *lista, int indice);
