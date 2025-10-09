@@ -36,7 +36,11 @@ lista_linear_t *criar_lista_linear(int capacidade, bool ordenada);
 bool lista_linear_cheia(lista_linear_t *lista);
 void inserir(lista_linear_t *lista, int valor);
 bool lista_linear_vazia(lista_linear_t *lista);
+int busca_linear(lista_linear_t* lista, int valor);
+int busca_binaria(lista_linear_t* lista, int valor);
 int buscar_lista(lista_linear_t *lista, int valor);
+int remover_nao_ordenada(lista_linear_t *lista, int valor);
+int remover_ordenada(lista_linear_t *lista, int valor);
 int remover_da_lista(lista_linear_t *lista, int valor);
 void destruir_lista(lista_linear_t *lista);
 int elemento_da_lista(lista_linear_t *lista, int indice);
@@ -44,11 +48,15 @@ int tamanho_da_lista(lista_linear_t *lista);
 
 /*--LISTA ENCADEADA--*/
 typedef struct no no_t;
+
 no_t* buscar_lista_encadeada(no_t** inicio, int valor);
 no_t* criar_lista_encadeada(int valor);
 void remover_lista_encadeada(no_t** inicio, int valor);
 
 no_t* criar_lista_encadeada_circular(int valor);
 void adicionar_circular (no_t** inicio, int valor);
+void adicionar_no (no_t** inicio, int valor);
+void destruir_no(no_t** inicio);
+void destruir_no_circular(no_t **inicio);
 
 #endif

@@ -86,18 +86,17 @@ int busca_binaria(lista_linear_t* lista, int valor) {
 }
 
 int buscar_lista(lista_linear_t* lista, int valor) {
-    int indice = 0;
-    while (indice < lista->tamanho) {
-        if (lista->elementos[indice] == valor) {
-            return indice;
-        }
-        indice++;
-    }
-    return -1;
+    if (lista_linear_vazia(lista))
+        exit(EXIT_FAILURE);
+
+    if (lista->ordenada)
+        return busca_binaria(lista, valor);
+
+    return busca_linear(lista, valor);
 }
 
 int remover_nao_ordenada(lista_linear_t *lista, int valor) {
-    int indice = buscar_na_lista(lista, valor);
+    int indice = buscar_lista(lista, valor);
 
     if (indice!=-1) {
         lista->elementos[indice] = lista->elementos[lista->tamanho - 1];
@@ -108,7 +107,7 @@ int remover_nao_ordenada(lista_linear_t *lista, int valor) {
 }
 
 int remover_ordenada(lista_linear_t *lista, int valor) {
-    int indice = buscar_na_lista(lista, valor);
+    int indice = buscar_lista(lista, valor);
 
     if (indice!=-1) {
         for (int i=indice; i<lista->tamanho-1; i++)
