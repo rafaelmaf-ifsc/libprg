@@ -17,14 +17,12 @@ pilha_t* criar_pilha(int capacidade) {
     return p;
 }
 
-void empilhar(pilha_t* pilha, int valor) {
-    if (pilha->topo == (pilha->capacidade + 1)) {
-        pilha->capacidade *= 2;
-        pilha->elementos = realloc(pilha->elementos, pilha->capacidade * sizeof(int));
-    }
-
+int empilhar(pilha_t* pilha, int valor) {
+    if (pilha->topo == pilha->capacidade-1)
+        return -1;
     pilha->topo++;
     pilha->elementos[pilha->topo] = valor;
+    return 0;
 }
 
 int desempilhar(pilha_t* pilha) {

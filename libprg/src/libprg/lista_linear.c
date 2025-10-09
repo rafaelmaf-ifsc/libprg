@@ -24,6 +24,9 @@ lista_linear_t* criar_lista_linear(int capacidade, bool ordenada) {
 bool lista_linear_cheia(lista_linear_t* lista) {
     return lista->tamanho >= lista->capacidade;
 }
+bool lista_linear_vazia(lista_linear_t *lista) {
+    return lista->tamanho <= 0;
+}
 
 void inserir_nao_ordenada(lista_linear_t* lista, int valor) {
     lista->elementos[lista->tamanho] = valor;
