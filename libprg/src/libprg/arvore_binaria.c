@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include "libprg/libprg.h"
 
 typedef struct no_arvore {
     int valor;
