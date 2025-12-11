@@ -67,4 +67,15 @@ no_duplo_t* buscar_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 no_duplo_t* adicionar_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 void remover_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 
+/*-- ARVORE BINARIA ---*/
+typedef struct no_arvore no_arvore_t;
+no_arvore_t *criar_no (int valor);
+void destruir_no (no_arvore_t *no);
+no_arvore_t *inserir_valor(no_arvore_t *raiz, int valor);
+no_arvore_t *remover_valor(no_arvore_t *raiz, int valor);
+int imprime_no(no_arvore_t *no);
+bool busca(no_arvore_t *raiz, int valor);
+int travessia_inorder(no_arvore_t *valor);
+
+
 #endif
