@@ -19,7 +19,7 @@ no_arvore_t *criar_no_arvore (int valor){
 
 void destruir_no_arvore (no_arvore_t *no) {
     if (no != NULL) {
-        destruir_no (no->esquerda); destruir_no (no->direita);
+        destruir_no_arvore (no->esquerda); destruir_no_arvore (no->direita);
         free (no) ;
     }
 }
@@ -27,11 +27,11 @@ void destruir_no_arvore (no_arvore_t *no) {
 // todos nós são raiz de uma subárvore
 no_arvore_t *inserir_valor_arvore(no_arvore_t *raiz, int valor){
     if (raiz == NULL) {
-        return criar_no(valor);
+        return criar_no_arvore(valor);
     } else if (valor < raiz->valor) {
-        raiz->esquerda = inserir_valor(raiz->esquerda, valor);
+        raiz->esquerda = inserir_valor_arvore(raiz->esquerda, valor);
     } else if (valor > raiz->valor) {
-        raiz->direita = inserir_valor(raiz->direita, valor);
+        raiz->direita = inserir_valor_arvore(raiz->direita, valor);
     }
     return raiz;
 }
@@ -65,7 +65,7 @@ bool busca(no_arvore_t *raiz, int valor){
 int travessia_inorder(no_arvore_t *valor) {
     if (valor->valor) {
         travessia_inorder(valor->esquerda);
-        imprime_no(valor);
+        imprime_no_arvore(valor);
         travessia_inorder(valor->direita);
     }
 }
